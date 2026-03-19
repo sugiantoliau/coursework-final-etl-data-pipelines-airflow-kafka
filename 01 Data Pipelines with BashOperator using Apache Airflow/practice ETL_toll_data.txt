@@ -1,0 +1,33 @@
+Practice how to run ETL_toll_data.py
+
+------------------------------------------------------------------------
+
+Set the AIRFLOW_HOME directory.
+
+export AIRFLOW_HOME=/home/project/airflow
+
+------------------------------------------------------------------------
+Submitting a DAG is as simple as copying the DAG python file into dags folder in the AIRFLOW_HOME directory. Open a terminal and run the command below to submit the DAG.
+
+cp ETL_toll_data.py $AIRFLOW_HOME/dags
+
+sudo cp ETL_toll_data.py $AIRFLOW_HOME/dags/
+
+------------------------------------------------------------------------
+Verify that our DAG actually got submitted. Run the command below to list out all the existing DAGs.
+
+airflow dags list
+
+------------------------------------------------------------------------
+Verify that ETL_toll_data is a part of the output.
+
+airflow dags list | grep ETL_toll_data
+
+------------------------------------------------------------------------
+Run the command below to list out all the tasks in ETL_toll_data.
+
+airflow tasks list ETL_toll_data
+
+
+------------------------------------------------------------------------
+
